@@ -12,7 +12,7 @@ namespace pub
         private static void Main(string[] args)
         {
             _bus = ServiceBusFactory.New(sbc =>
-                                             {
+                                             {                                                
                                                  sbc.UseRabbitMqRouting();
                                                  sbc.ReceiveFrom("rabbitmq://localhost/matt1");
                                                  sbc.UseJsonSerializer();

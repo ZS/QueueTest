@@ -1,0 +1,8 @@
+
+/src/*.suo
+/src/*.user
+/src/_ReSharper.MassTransit.Transports.Stomp
+/src/MassTransit.Transports.Stomp/bin
+/src/MassTransit.Transports.Stomp/obj
+/src/MassTransit.Transports.Stomp.Tests/bin
+/src/MassTransit.Transports.Stomp.Tests/obj

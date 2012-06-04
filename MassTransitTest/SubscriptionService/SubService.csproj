@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6755AB5B-97D0-4D46-BF9A-60685FD031D5}</ProjectGuid>
+    <ProjectGuid>{4B7C5A56-7FD7-41D2-94F9-C0A5E3FE7405}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MassTransitTest.StompServer</RootNamespace>
-    <AssemblyName>MassTransitTest.StompServer</AssemblyName>
+    <RootNamespace>SubService</RootNamespace>
+    <AssemblyName>SubService</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -35,12 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fleck, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MassTransit.Stomp\lib\Fleck.dll</HintPath>
-    </Reference>
     <Reference Include="Magnum">
-      <HintPath>..\MassTransit.Stomp\lib\Magnum.dll</HintPath>
+      <HintPath>..\lib\MassTransit.Stomp\Magnum.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit">
+      <HintPath>..\MassTransit.Stomp\lib\MassTransit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,25 +48,23 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Ultralight, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MassTransit.Stomp\lib\Ultralight.dll</HintPath>
-    </Reference>
-    <Reference Include="Ultralight.Client">
-      <HintPath>..\MassTransit.Stomp\lib\Ultralight.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>..\MassTransit.Stomp\lib\websocket-sharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MassTransit.Stomp\src\MassTransit.Transports.Stomp\MassTransit.Transports.Stomp.csproj">
+      <Project>{C547A1A0-F081-4351-B2FF-8382F4A5CEAE}</Project>
+      <Name>MassTransit.Transports.Stomp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MassTransitTest.csproj">
+      <Project>{F056E97A-A63D-4BCB-8A5E-AD12190D66E2}</Project>
+      <Name>MassTransitTest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
