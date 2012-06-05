@@ -29,7 +29,7 @@ namespace Subscriber
                 ServiceBusFactory.New(sbc =>
                 {
                     sbc.UseStomp();
-                    sbc.ReceiveFrom("{0}/queue/matt1".FormatWith(Constants.HostUri));
+                    sbc.ReceiveFrom("{0}/queue/matt1".FormatWith(Constants.HostUri));                    
                     sbc.UseSubscriptionService("{0}/queue/matt_subscriptions".FormatWith(Constants.HostUri));
                     sbc.UseControlBus();       
                     sbc.Subscribe(s => s.Handler<Request>(HandleMessage));

@@ -29,7 +29,7 @@ namespace Publisher
                 var id = 0;
                 while (true)
                 {
-                    _bus.Publish(new Request { CorrelationId = id, Text = "Hiiiii" });
+                    _bus.Publish(new Request { CorrelationId = id, Text = "Hiiiii" });                    
                     Console.Out.WriteLine("Published request " + id);
                     id++;
                     Thread.Sleep(5000);
@@ -48,7 +48,7 @@ namespace Publisher
                 ServiceBusFactory.New(sbc =>
                 {
                     sbc.UseStomp();
-
+                    
                     sbc.ReceiveFrom("{0}/queue/matt_subscriptions".FormatWith(Constants.HostUri));
                     sbc.SetConcurrentConsumerLimit(1);
                 });
